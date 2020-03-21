@@ -77,9 +77,11 @@ public class MainTree {
 	        	}	
     	
 	         } while ((linea2=br2.readLine())!=null) {
-
-	        	 String delimeters = "[. ]";
-	        	 String[] oracion = linea2.split(delimeters);	        	
+			linea2 = linea2.toLowerCase();
+	        	linea2 = capitalizeFirstLetter(linea2);
+	        	System.out.println(linea2);
+	        	String delimeters = "[. ]";
+	        	String[] oracion = linea2.split(delimeters);	        	
 	        	 
 	        	 ArrayList<String> temp = new ArrayList<String>();
 	        	 
@@ -117,6 +119,13 @@ public class MainTree {
 	            e2.printStackTrace();
 	         }
 	      }		
+	}
+	
+	public static String capitalizeFirstLetter(String string) {
+	    if (string == null || string.length() == 0) {
+	        return string;
+	    }
+	    return string.substring(0, 1).toUpperCase() + string.substring(1);
 	}
 
 }
